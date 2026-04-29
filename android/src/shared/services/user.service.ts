@@ -1,0 +1,10 @@
+import { User } from '@/shared/types';
+
+export async function getUserAsync(): Promise<User> {
+  try {
+    await new Promise(resolve => setTimeout(resolve, 500));
+    return { name: 'test user', email: 'testuser@test.com' };
+  } catch (err) {
+    return Promise.reject(err);
+  }
+}
